@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LeaderboardFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/home_background">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/first"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_marginVertical="10dp"
+            android:layout_centerHorizontal="true"
+            android:src="@raw/profile_icon"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#1a89c9"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/secend"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginVertical="50dp"
+            android:layout_marginLeft="65dp"
+            android:src="@raw/profile_icon"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#1a89c9"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/third"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginVertical="60dp"
+            android:layout_marginRight="50dp"
+            android:layout_alignParentRight="true"
+            android:src="@raw/profile_icon"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#1a89c9"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/leaderboard1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="20dp">
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-22dp"
+        android:layout_marginBottom="50dp"
+        android:paddingTop="10dp"
+        android:paddingHorizontal="8dp"
+        android:paddingBottom="15dp"
+        android:background="@drawable/edittext_round"
+        android:layout_below="@+id/layout1">
+
+        <TextView
+            android:id="@+id/rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rank"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_alignParentRight="true"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rank"
+            android:layout_marginTop="5dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">MyQuiz</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="questions">
+        <item>1. As companies move past the experimental phase with Hadoop, many cite the need for additional capabilities, including _______________</item>
+        <item>2. Point out the correct statement.</item>
+        <item>3. According to analysts, for what can traditional IT systems provide a foundation when they’re integrated with big data technologies like Hadoop?</item>
+        <item>4. Hadoop is a framework that works with a variety of related tools. Common cohorts include ____________</item>
+        <item>5. Point out the wrong statement.</item>
+        <item>6. What was Hadoop named after?</item>
+        <item>7. All of the following accurately describe Hadoop, EXCEPT ____________</item>
+        <item>8. __________ can best be described as a programming model used to develop Hadoop-based applications that can process massive amounts of data.</item>
+        <item>9. __________ has the world’s largest Hadoop cluster.</item>
+        <item>10. Facebook Tackles Big Data With _______ based on Hadoop.</item>
+    </string-array>
+
+    <string-array name="option1">
+        <item>a) Improved data storage and information retrieval</item>
+        <item>a) Hadoop do need specialized hardware to process the data</item>
+        <item>a) Big data management and data mining</item>
+        <item>a) MapReduce, Hive and HBase</item>
+        <item>a) Hardtop processing capabilities are huge and its real advantage lies in the ability to process terabytes &amp; petabytes of data</item>
+        <item>a) Creator Doug Cutting’s favorite circus act</item>
+        <item>a) Open-source</item>
+        <item>a) MapReduce</item>
+        <item>a) Apple</item>
+        <item>a) ‘Project Prism’</item>
+    </string-array>
+
+    <string-array name="option2">
+        <item>b) Improved extract, transform and load features for data integration</item>
+        <item>b) Hadoop 2.0 allows live stream processing of real-time data</item>
+        <item>b) Data warehousing and business intelligence</item>
+        <item>b) MapReduce, MySQL and Google Apps</item>
+        <item>b) Hadoop uses a programming model called “MapReduce”, all the programs should confirm to this model in order to work on Hadoop platform</item>
+        <item>b) Cutting’s high school rock band</item>
+        <item>b) Real-time</item>
+        <item>b) Mahout</item>
+        <item>b) Datamatics</item>
+        <item>b) ‘Prism’</item>
+    </string-array>
+
+    <string-array name="option3">
+        <item>c) Improved data warehousing functionality</item>
+        <item>c) In Hadoop programming framework output files are divided into lines or records</item>
+        <item>c) Management of Hadoop clusters</item>
+        <item>c) MapReduce, Hummer and Iguana</item>
+        <item>c) The programming model, MapReduce, used by Hadoop is difficult to write and test</item>
+        <item>c) The toy elephant of Cutting’s son</item>
+        <item>c) Java-based</item>
+        <item>c) Oozie</item>
+        <item>c) Facebook</item>
+        <item>c) ‘Project Big’</item>
+    </string-array>
+
+    <string-array name="option4">
+        <item>d) Improved security, workload management, and SQL support</item>
+        <item>d) None of the mentioned</item>
+        <item>d) Collecting and storing unstructured data</item>
+        <item>d) MapReduce, Heron and Trumpet</item>
+        <item>d) All of the mentioned</item>
+        <item>d) A sound Cutting’s laptop made during Hadoop development</item>
+        <item>d) Distributed computing approach</item>
+        <item>d) All of the mentioned</item>
+        <item>d) None of the mentioned</item>
+        <item>d) ‘Project Data’</item>
+    </string-array>
+
+</resources>
