@@ -13,11 +13,11 @@
         android:id="@+id/tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
         android:text="Recent"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/white_smoke"
-        android:background="@color/blue"/>
+        android:textColor="@color/white_smoke"/>
 
     <HorizontalScrollView
         android:id="@+id/sv"
@@ -80,13 +80,13 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/bigdata"/>
+                        android:src="@drawable/cloud"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="BDA"
+                        android:text="Cloud"
                         android:textSize="16dp"/>
 
                 </LinearLayout>
@@ -109,13 +109,13 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/bigdata"/>
+                        android:src="@drawable/networking"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="BDA"
+                        android:text="Networking"
                         android:textSize="16dp"/>
 
                 </LinearLayout>
@@ -138,13 +138,13 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/bigdata"/>
+                        android:src="@drawable/python"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="BDA"
+                        android:text="Python"
                         android:textSize="16dp"/>
 
                 </LinearLayout>
@@ -167,13 +167,13 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/bigdata"/>
+                        android:src="@drawable/aptitude"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="BDA"
+                        android:text="Aptitude"
                         android:textSize="16dp"/>
 
                 </LinearLayout>
@@ -196,13 +196,13 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/bigdata"/>
+                        android:src="@drawable/gk"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="BDA"
+                        android:text="GK"
                         android:textSize="16dp"/>
 
                 </LinearLayout>
@@ -213,16 +213,38 @@
 
     </HorizontalScrollView>
 
-    <TextView
+    <LinearLayout
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Top Stories"
         android:layout_below="@+id/sv"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="@color/white_smoke"
-        android:background="@color/blue"/>
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_weight="40"
+            android:layout_marginTop="15dp"
+            android:background="@color/white_smoke"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="35"
+            android:text="Top Stories"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/white_smoke"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_weight="40"
+            android:layout_marginTop="15dp"
+            android:background="@color/white_smoke"/>
+
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/fl"

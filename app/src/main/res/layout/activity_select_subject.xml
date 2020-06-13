@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="30dp"
+    tools:context=".SelectSubject">
+
+    <Button
+        android:id="@+id/bda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="BDA"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="@color/white_smoke"
+        android:background="@drawable/button_round"/>
+
+    <Button
+        android:id="@+id/cloud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Cloud"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="@color/white_smoke"
+        android:background="@drawable/button_round"/>
+
+    <Button
+        android:id="@+id/networking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Networking"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="@color/white_smoke"
+        android:background="@drawable/button_round"/>
+
+    <Button
+        android:id="@+id/python"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Python"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="@color/white_smoke"
+        android:background="@drawable/button_round"/>
+
+    <Button
+        android:id="@+id/aptitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Aptitude"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textColor="@color/white_smoke"
+        android:background="@drawable/button_round"/>
+
+    <Button
+        android:id="@+id/gk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="GK"
+        android:textAllCaps="false"
+        android:textColor="@color/white_smoke"
+        android:textSize="20sp"
+        android:background="@drawable/button_round"/>
+
+</LinearLayout>

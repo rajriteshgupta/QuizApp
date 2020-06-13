@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,53 @@ public class Home_Fragment extends Fragment {
         bda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(view.getContext(),QuestionActivity.class));
+                Intent intent = new Intent(view.getContext(),QuestionActivity.class);
+                intent.putExtra("key","1");
+                startActivity(intent);
+            }
+        });
+
+        CardView cloud = view.findViewById(R.id.card_view2);
+        cloud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(view.getContext(),QuestionActivity.class);
+                intent.putExtra("key","2");
+                startActivity(intent);
+            }
+        });
+
+        CardView networking = view.findViewById(R.id.card_view3);
+        networking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(view.getContext(),QuestionActivity.class);
+                intent.putExtra("key","3");
+                startActivity(intent);
+            }
+        });
+
+        CardView python = view.findViewById(R.id.card_view4);
+        python.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(view.getContext(),"Coming soon...",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        CardView aptitude = view.findViewById(R.id.card_view5);
+        aptitude.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(view.getContext(),"Coming soon...",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        CardView gk = view.findViewById(R.id.card_view6);
+        gk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(view.getContext(),"Coming soon...",Toast.LENGTH_SHORT).show();
             }
         });
         recyclerView = view.findViewById(R.id.rv);

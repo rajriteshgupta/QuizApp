@@ -31,7 +31,7 @@ public class PostQuestionActivity extends AppCompatActivity {
         String option2 = mOpt1.getText().toString();
         String option3 = mOpt1.getText().toString();
         String option4 = mOpt1.getText().toString();
-        String type = "post_question";
+        String type = "question_post";
         if(question!=null && option1!=null && option2!=null && option3!=null && option4!=null) {
             BackgroundWorker backgroundWorker = new BackgroundWorker(this);
             backgroundWorker.execute(type, question, option1, option2, option3, option4);

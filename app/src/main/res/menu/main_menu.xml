@@ -9,6 +9,11 @@
         android:icon="@drawable/ic_notifications_black_24dp"/>
 
     <item
+        android:id="@+id/create_quiz"
+        android:title="Create Quiz"
+        app:showAsAction="never"/>
+
+    <item
         android:id="@+id/signOut"
         android:title="Sign Out"
         app:showAsAction="never"/>

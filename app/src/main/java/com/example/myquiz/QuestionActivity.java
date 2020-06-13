@@ -18,26 +18,52 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class QuestionActivity extends AppCompatActivity {
 
     AlertDialog.Builder builder;
+    private ActionBar toolbar;
     String[] questions,options1,options2,options3,options4;
-    int i=0,sec=0,min=10,hour=0;
+    int i=0,sec=0,min=0,hour=0;
+    TextView timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+        toolbar = getSupportActionBar();
 
-        final TextView timer=findViewById(R.id.timer);
+        Intent intent = getIntent();
+        String key = intent.getStringExtra("key");
+        timer=findViewById(R.id.timer);
         Resources res = getResources();
-        questions = res.getStringArray(R.array.questions);
-        options1 = res.getStringArray(R.array.option1);
-        options2 = res.getStringArray(R.array.option2);
-        options3 = res.getStringArray(R.array.option3);
-        options4 = res.getStringArray(R.array.option4);
+        if(key.equals("1")){
+            toolbar.setTitle("BDA Quiz");
+            questions = res.getStringArray(R.array.bda_questions);
+            options1 = res.getStringArray(R.array.bda_option1);
+            options2 = res.getStringArray(R.array.bda_option2);
+            options3 = res.getStringArray(R.array.bda_option3);
+            options4 = res.getStringArray(R.array.bda_option4);
+        }
+        else if(key.equals("2")){
+            toolbar.setTitle("Cloud Quiz");
+            questions = res.getStringArray(R.array.cloud_questions);
+            options1 = res.getStringArray(R.array.cloud_option1);
+            options2 = res.getStringArray(R.array.cloud_option2);
+            options3 = res.getStringArray(R.array.cloud_option3);
+            options4 = res.getStringArray(R.array.cloud_option4);
+        }
+        else if(key.equals("3")){
+            toolbar.setTitle("Networking Quiz");
+            questions = res.getStringArray(R.array.networking_questions);
+            options1 = res.getStringArray(R.array.networking_option1);
+            options2 = res.getStringArray(R.array.networking_option2);
+            options3 = res.getStringArray(R.array.networking_option3);
+            options4 = res.getStringArray(R.array.networking_option4);
+        }
+
         builder = new AlertDialog.Builder(QuestionActivity.this);
         final TextView question = findViewById(R.id.question);
         final RadioGroup radioGroup = findViewById(R.id.radio_group);
@@ -54,22 +80,7 @@ public class QuestionActivity extends AppCompatActivity {
         option3.setText(options3[0]);
         option4.setText(options4[0]);
 
-        new CountDownTimer(600000,1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                if(sec<0 && min>0){
-                    min--;
-                    sec=59;
-                }
-                timer.setText(String.format("%02d", hour)+":"+String.format("%02d", min)+":"+String.format("%02d", sec)+" sec");
-                sec--;
-            }
-            @Override
-            public void onFinish() {
-                finish();
-                //startActivity(new Intent(QuestionActivity.this,MainActivity.class));
-            }
-        }.start();
+        counterFunction(questions.length);
 
         radioGroup.clearCheck();
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -163,5 +174,27 @@ public class QuestionActivity extends AppCompatActivity {
     public void onBackPressed() {
         endQuiz();
 //        super.onBackPressed();
+    }
+
+    void counterFunction(int minutes){
+
+        final int[] min = {minutes};
+        int future = min[0]*60000;
+        new CountDownTimer(future,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                if(sec<0 && min[0] >0){
+                    min[0]--;
+                    sec=59;
+                }
+                timer.setText(String.format("%02d", hour)+":"+String.format("%02d", min[0])+":"+String.format("%02d", sec)+" sec");
+                sec--;
+            }
+            @Override
+            public void onFinish() {
+                finish();
+                //startActivity(new Intent(QuestionActivity.this,MainActivity.class));
+            }
+        }.start();
     }
 }

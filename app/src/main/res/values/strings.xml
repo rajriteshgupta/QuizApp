@@ -4,7 +4,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string-array name="questions">
+    <string-array name="bda_questions">
         <item>1. As companies move past the experimental phase with Hadoop, many cite the need for additional capabilities, including _______________</item>
         <item>2. Point out the correct statement.</item>
         <item>3. According to analysts, for what can traditional IT systems provide a foundation when they’re integrated with big data technologies like Hadoop?</item>
@@ -17,7 +17,7 @@
         <item>10. Facebook Tackles Big Data With _______ based on Hadoop.</item>
     </string-array>
 
-    <string-array name="option1">
+    <string-array name="bda_option1">
         <item>a) Improved data storage and information retrieval</item>
         <item>a) Hadoop do need specialized hardware to process the data</item>
         <item>a) Big data management and data mining</item>
@@ -30,7 +30,7 @@
         <item>a) ‘Project Prism’</item>
     </string-array>
 
-    <string-array name="option2">
+    <string-array name="bda_option2">
         <item>b) Improved extract, transform and load features for data integration</item>
         <item>b) Hadoop 2.0 allows live stream processing of real-time data</item>
         <item>b) Data warehousing and business intelligence</item>
@@ -43,7 +43,7 @@
         <item>b) ‘Prism’</item>
     </string-array>
 
-    <string-array name="option3">
+    <string-array name="bda_option3">
         <item>c) Improved data warehousing functionality</item>
         <item>c) In Hadoop programming framework output files are divided into lines or records</item>
         <item>c) Management of Hadoop clusters</item>
@@ -56,7 +56,7 @@
         <item>c) ‘Project Big’</item>
     </string-array>
 
-    <string-array name="option4">
+    <string-array name="bda_option4">
         <item>d) Improved security, workload management, and SQL support</item>
         <item>d) None of the mentioned</item>
         <item>d) Collecting and storing unstructured data</item>
@@ -67,6 +67,111 @@
         <item>d) All of the mentioned</item>
         <item>d) None of the mentioned</item>
         <item>d) ‘Project Data’</item>
+    </string-array>
+
+    <string-array name="cloud_questions">
+        <item>1. _________ computing refers to applications and services that run on a distributed network using virtualized resources.</item>
+        <item>2. Point out the wrong statement.</item>
+        <item>3. ________ as a utility is a dream that dates from the beginning of the computing industry itself.</item>
+        <item>4. Which of the following is essential concept related to Cloud?</item>
+        <item>5. Point out the wrong statement.</item>
+        <item>6. Which of the following cloud concept is related to pooling and sharing of resources?</item>
+        <item>7. ________ has many of the characteristics of what is now being called cloud computing.</item>
+        <item>8. Which of the following can be identified as cloud?</item>
+        <item> 9. Cloud computing is an abstraction based on the notion of pooling physical resources and presenting them as a ________ resource.</item>
+        <item>10. Which of the following is Cloud Platform by Amazon?</item>
+    </string-array>
+
+    <string-array name="cloud_option1">
+        <item>a) Distributed</item>
+        <item>a) The massive scale of cloud computing systems was enabled by the popularization of the Internet</item>
+        <item>a) Model</item>
+        <item>a) Reliability</item>
+        <item>a) All applications benefit from deployment in the cloud</item>
+        <item>a) Polymorphism</item>
+        <item>a) Internet</item>
+        <item>a) Web Applications</item>
+        <item>a) real</item>
+        <item>a) Azure</item>
+    </string-array>
+
+    <string-array name="cloud_option2">
+        <item>b) Cloud</item>
+        <item>b) Soft computing represents a real paradigm shift in the way in which systems are deployed</item>
+        <item>b) Computing</item>
+        <item>b) Productivity</item>
+        <item>b) With cloud computing, you can start very small and become big very fast</item>
+        <item>b) Abstraction</item>
+        <item>b) Softwares</item>
+        <item>b) Intranet</item>
+        <item>b) virtual</item>
+        <item>b) AWS</item>
+    </string-array>
+
+    <string-array name="cloud_option3">
+        <item>c) Soft</item>
+        <item>c) Cloud computing makes the long-held dream of utility computing possible with a pay-as-you-go, infinitely scalable, universally available system</item>
+        <item>c) Software</item>
+        <item>c) Abstraction</item>
+        <item>c) Cloud computing is revolutionary, even if the technology it is built on is evolutionary</item>
+        <item>c) Virtualization</item>
+        <item>c) Web Service</item>
+        <item>c) Hadoop</item>
+        <item>c) cloud</item>
+        <item>c) Cloudera</item>
+    </string-array>
+
+    <string-array name="cloud_option4">
+        <item>d) Parallel</item>
+        <item>d) All of the mentioned</item>
+        <item>d) All of the mentioned</item>
+        <item>d) All of the mentioned</item>
+        <item>d) None of the mentioned</item>
+        <item>d) None of the mentioned</item>
+        <item>d) All of the mentioned</item>
+        <item>d) All of the mentioned</item>
+        <item>d) None of the mentioned</item>
+        <item>d) All of the mentioned</item>
+    </string-array>
+
+    <string-array name="networking_questions">
+        <item>1. When collection of various computers seems a single coherent system to its client, then it is called _________</item>
+        <item>2. Two devices are in network if __________</item>
+        <item>3. Which of the following computer networks is built on the top of another network?</item>
+        <item>4. In computer network nodes are _________</item>
+        <item>5. Communication channel is shared by all the machines on the network in ________</item>
+    </string-array>
+
+    <string-array name="networking_option1">
+        <item>a) computer network</item>
+        <item>a) a process in one device is able to exchange information with a process in another device</item>
+        <item>a) prior network</item>
+        <item>a) the computer that originates the data</item>
+        <item>a) broadcast network</item>
+    </string-array>
+
+    <string-array name="networking_option2">
+        <item>b) distributed system</item>
+        <item>b) a process is running on both devices</item>
+        <item>b) chief network</item>
+        <item>b) the computer that routes the data</item>
+        <item>b) unicast network</item>
+    </string-array>
+
+    <string-array name="networking_option3">
+        <item>c) networking system</item>
+        <item>c) PIDs of the processes running of different devices are same</item>
+        <item>c) prime network</item>
+        <item>c) the computer that terminates the data</item>
+        <item>c) multicast network</item>
+    </string-array>
+
+    <string-array name="networking_option4">
+        <item>d) mail system</item>
+        <item>d) a process is active and another is inactive</item>
+        <item>d) overlay network</item>
+        <item>d) all of the mentioned</item>
+        <item>d) anycast network</item>
     </string-array>
 
 </resources>
