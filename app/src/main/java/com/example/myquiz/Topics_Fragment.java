@@ -64,6 +64,7 @@ public class Topics_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_topics_, container, false);
+
         CardView bda = view.findViewById(R.id.card_view1);
         bda.setOnClickListener(new View.OnClickListener() {
             @Override

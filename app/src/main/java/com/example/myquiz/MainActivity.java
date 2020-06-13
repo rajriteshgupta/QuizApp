@@ -95,7 +95,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if(item.getItemId() == R.id.notification){
+        if(item.getItemId() == R.id.create_quiz){
+            startActivity(new Intent(MainActivity.this,SelectSubject.class));
+        }
+        else if(item.getItemId() == R.id.notification){
             startActivity(new Intent(MainActivity.this,NotificationActivity.class));
         }
         else if(item.getItemId() == R.id.signOut){

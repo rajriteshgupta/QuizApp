@@ -1,5 +1,6 @@
 package com.example.myquiz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,11 +13,14 @@ public class PostQuestionActivity extends AppCompatActivity {
 
     Button mPost;
     EditText mQuestion,mOpt1,mOpt2,mOpt3,mOpt4;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_question);
+
+        intent = getIntent();
         mPost = findViewById(R.id.post);
         mQuestion = findViewById(R.id.question);
         mOpt1 = findViewById(R.id.option1);
@@ -26,6 +30,7 @@ public class PostQuestionActivity extends AppCompatActivity {
     }
 
     public void PostQuestion(View view){
+        String subject = intent.getStringExtra("key");
         String question = mQuestion.getText().toString();
         String option1 = mOpt1.getText().toString();
         String option2 = mOpt1.getText().toString();
@@ -34,7 +39,7 @@ public class PostQuestionActivity extends AppCompatActivity {
         String type = "question_post";
         if(question!=null && option1!=null && option2!=null && option3!=null && option4!=null) {
             BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-            backgroundWorker.execute(type, question, option1, option2, option3, option4);
+            backgroundWorker.execute(type, subject, question, option1, option2, option3, option4);
         }
         else{
             Toast.makeText(PostQuestionActivity.this,"Some Fields are Empty!!!",Toast.LENGTH_LONG).show();

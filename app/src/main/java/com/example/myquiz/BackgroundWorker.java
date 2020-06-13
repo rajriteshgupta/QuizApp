@@ -108,11 +108,12 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         }
         if(type.equals("question_post")) {
             try {
-                String question = params[1];
-                String option1 = params[2];
-                String option2 = params[3];
-                String option3 = params[4];
-                String option4 = params[5];
+                String subject = params[1];
+                String question = params[2];
+                String option1 = params[3];
+                String option2 = params[4];
+                String option3 = params[5];
+                String option4 = params[6];
                 URL url = new URL(questionPost_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -120,7 +121,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("question","UTF-8")+"="+URLEncoder.encode(question,"UTF-8")+"&&"
+                String post_data = URLEncoder.encode("subject","UTF-8")+"="+URLEncoder.encode(subject,"UTF-8")+"&&"
+                        +URLEncoder.encode("question","UTF-8")+"="+URLEncoder.encode(question,"UTF-8")+"&&"
                         +URLEncoder.encode("option1","UTF-8")+"="+URLEncoder.encode(option1,"UTF-8")+"&&"
                         +URLEncoder.encode("option2","UTF-8")+"="+URLEncoder.encode(option2,"UTF-8")+"&&"
                         +URLEncoder.encode("option3","UTF-8")+"="+URLEncoder.encode(option3,"UTF-8")+"&&"
