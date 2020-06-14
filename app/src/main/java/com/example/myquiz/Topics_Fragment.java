@@ -1,5 +1,6 @@
 package com.example.myquiz;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,9 +71,7 @@ public class Topics_Fragment extends Fragment {
         bda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(view.getContext(),QuestionActivity.class);
-                intent.putExtra("key","1");
-                startActivity(intent);
+                dialogBox(view,"1");
             }
         });
 
@@ -79,9 +79,7 @@ public class Topics_Fragment extends Fragment {
         cloud.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(view.getContext(),QuestionActivity.class);
-                intent.putExtra("key","2");
-                startActivity(intent);
+                dialogBox(view,"2");
             }
         });
 
@@ -89,9 +87,7 @@ public class Topics_Fragment extends Fragment {
         networking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(view.getContext(),QuestionActivity.class);
-                intent.putExtra("key","3");
-                startActivity(intent);
+                dialogBox(view,"3");
             }
         });
 
@@ -120,5 +116,28 @@ public class Topics_Fragment extends Fragment {
         });
 
         return view;
+    }
+
+    void dialogBox(final View view, final String key){
+        final Dialog dialog = new Dialog(view.getContext());
+        dialog.setContentView(R.layout.custom);
+        Button continue_ = (Button) dialog.findViewById(R.id.positive);
+        Button cancel = (Button) dialog.findViewById(R.id.negative);
+        continue_.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Intent intent = new Intent(view.getContext(),QuestionActivity.class);
+                intent.putExtra("key",key);
+                startActivity(intent);
+            }
+        });
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
 }

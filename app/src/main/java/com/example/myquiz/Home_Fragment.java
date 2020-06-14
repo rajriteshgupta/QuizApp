@@ -1,5 +1,6 @@
 package com.example.myquiz;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,13 +45,12 @@ public class Home_Fragment extends Fragment {
 
         final View view =inflater.inflate(R.layout.fragment_home, container, false);
         tv = view.findViewById(R.id.tt);
+
         CardView bda = view.findViewById(R.id.card_view1);
         bda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(view.getContext(),QuestionActivity.class);
-                intent.putExtra("key","1");
-                startActivity(intent);
+                dialogBox(view,"1");
             }
         });
 
@@ -57,9 +58,7 @@ public class Home_Fragment extends Fragment {
         cloud.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(view.getContext(),QuestionActivity.class);
-                intent.putExtra("key","2");
-                startActivity(intent);
+                dialogBox(view,"2");
             }
         });
 
@@ -67,9 +66,7 @@ public class Home_Fragment extends Fragment {
         networking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(view.getContext(),QuestionActivity.class);
-                intent.putExtra("key","3");
-                startActivity(intent);
+                dialogBox(view,"3");
             }
         });
 
@@ -122,6 +119,29 @@ public class Home_Fragment extends Fragment {
         homelist.add(new HomeViewModel(images[2],"Fact3"));
         homelist.add(new HomeViewModel(images[3],"Fact4"));
         homelist.add(new HomeViewModel(images[4],"Fact5"));
+    }
+
+    void dialogBox(final View view, final String key){
+        final Dialog dialog = new Dialog(view.getContext());
+        dialog.setContentView(R.layout.custom);
+        Button continue_ = (Button) dialog.findViewById(R.id.positive);
+        Button cancel = (Button) dialog.findViewById(R.id.negative);
+        continue_.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Intent intent = new Intent(view.getContext(),QuestionActivity.class);
+                intent.putExtra("key",key);
+                startActivity(intent);
+            }
+        });
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
 }
 

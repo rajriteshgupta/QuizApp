@@ -35,13 +35,13 @@
                 android:layout_height="wrap_content"
                 android:paddingVertical="5dp"
                 android:layout_centerHorizontal="true"
-                android:text="Name"
+                android:text="Ritesh Raj"
                 android:textSize="24sp"
                 android:textColor="@color/black"
                 android:layout_marginBottom="10dp"
                 android:layout_below="@+id/profilePhoto"/>
 
-            <RelativeLayout
+            <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -49,23 +49,28 @@
                 android:layout_marginHorizontal="20dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text=">>>Branch" />
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text=">>> IT, SOE"
+                    />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text=">>>Reg No."
-                    android:layout_centerHorizontal="true"/>
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text=">>> 14180066"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text=">>>Email"
-                    android:layout_alignParentRight="true"/>
+                    android:layout_weight="6"
+                    android:gravity="center"
+                    android:text=">>> ritesh@gmail.com"/>
 
-            </RelativeLayout>
+            </LinearLayout>
 
             <RelativeLayout
                 android:id="@+id/outer_layout"
@@ -113,7 +118,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="score"
+                                android:text="100"
                                 android:textAlignment="center"
                                 android:layout_weight="30"/>
 
@@ -131,13 +136,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="BDA"
+                                android:text="Cloud"
                                 android:layout_weight="70"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="score"
+                                android:text="80"
                                 android:textAlignment="center"
                                 android:layout_weight="30"/>
 
@@ -155,13 +160,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="BDA"
+                                android:text="Networking"
                                 android:layout_weight="70"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="score"
+                                android:text="70"
                                 android:textAlignment="center"
                                 android:layout_weight="30"/>
 
@@ -179,13 +184,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="BDA"
+                                android:text="Python"
                                 android:layout_weight="70"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="score"
+                                android:text="100"
                                 android:textAlignment="center"
                                 android:layout_weight="30"/>
 
@@ -203,13 +208,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="BDA"
+                                android:text="Aptitude"
                                 android:layout_weight="70"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="score"
+                                android:text="90"
                                 android:textAlignment="center"
                                 android:layout_weight="30"/>
 
@@ -227,13 +232,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="BDA"
+                                android:text="GK"
                                 android:layout_weight="70"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="score"
+                                android:text="50"
                                 android:textAlignment="center"
                                 android:layout_weight="30"/>
 
@@ -246,6 +251,7 @@
             </RelativeLayout>
 
             <Button
+                android:id="@+id/update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Update Profile"

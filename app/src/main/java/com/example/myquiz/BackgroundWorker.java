@@ -168,7 +168,6 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         }
         else if(result.equals("question inserted")){
             Toast.makeText(context,"Question Uploaded Successfully",Toast.LENGTH_LONG).show();
-            context.startActivity(new Intent(context,MainActivity.class));
         }
         else if(result.equals("not success")){
             Toast.makeText(context,"Login failed",Toast.LENGTH_LONG).show();

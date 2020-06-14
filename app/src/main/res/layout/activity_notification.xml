@@ -1,9 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_grey"
     tools:context=".NotificationActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_weight="40"
+            android:layout_marginTop="15dp"
+            android:background="@color/white_smoke"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="40"
+            android:text="Notifications"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_weight="40"
+            android:layout_marginTop="15dp"
+            android:background="@color/white_smoke"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/notification1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your next BDA Quiz should be on tomorrow morning 10 A.M."
+        android:textSize="20sp"
+        android:layout_below="@+id/text"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext2_round"/>
+
+    <TextView
+        android:id="@+id/notification2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your next Cloud Quiz should be on tomorrow evening 4 P.M."
+        android:textSize="20sp"
+        android:layout_below="@+id/notification1"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext2_round"/>
+
+    <TextView
+        android:id="@+id/notification3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your next Networking Quiz should be on tomorrow morning 9 A.M."
+        android:textSize="20sp"
+        android:layout_below="@+id/notification2"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext2_round"/>
+
+    <TextView
+        android:id="@+id/notification4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your next Python Quiz should be on tomorrow morning 11 A.M."
+        android:textSize="20sp"
+        android:layout_below="@+id/notification3"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext2_round"/>
+
+    <TextView
+        android:id="@+id/notification5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your next Aptitude Quiz should be on tomorrow morning 8 A.M."
+        android:textSize="20sp"
+        android:layout_below="@+id/notification4"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext2_round"/>
+
+    <TextView
+        android:id="@+id/notification6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your next GK Quiz should be on tomorrow evening 5 P.M."
+        android:textSize="20sp"
+        android:layout_below="@+id/notification5"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext2_round"/>
+
+</RelativeLayout>

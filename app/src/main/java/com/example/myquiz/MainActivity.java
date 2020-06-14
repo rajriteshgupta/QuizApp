@@ -8,12 +8,16 @@ import androidx.fragment.app.Fragment;//add these
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -64,8 +68,6 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 case R.id.icon4:
-
-                    Log.d("TAG","working");
                     toolbar.setTitle("Profile");
                     fragment = new ProfileFragment();
                     loadFragment(fragment);
@@ -77,14 +79,12 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-
         private void loadFragment(Fragment fragment) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame_container, fragment);
             transaction.addToBackStack(null);
             transaction.commit();
         }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -111,38 +111,47 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ExitApp(){
-        builder.setMessage("Are You Sure?").setTitle("Exit");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                finishAffinity();
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.dismiss();
-            }
-        });
-        builder.show();
+            dialogBox("Exit");
     }
 
     public void startSignOut(){
-        builder.setMessage("Are You Sure?").setTitle("Sign Out");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                startActivity(new Intent(MainActivity.this,LogInActivity.class));
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.dismiss();
-            }
-        });
-        builder.show();
+            dialogBox("Sign Out");
     }
 
     @Override
     public void onBackPressed() {
         ExitApp();
+    }
+
+    void dialogBox(final String key){
+        final Dialog dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.custom);
+        TextView text1 = dialog.findViewById(R.id.text1);
+        text1.setText(key);
+        TextView text2 = dialog.findViewById(R.id.text2);
+        text2.setText("Are you sure you want to "+key+"?");
+        Button ok = (Button) dialog.findViewById(R.id.positive);
+        ok.setText("Ok");
+        Button cancel = (Button) dialog.findViewById(R.id.negative);
+        cancel.setText("Cancel");
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(key.equals("Exit")){
+                    finishAffinity();
+                }
+                else if(key.equals("Sign Out")){
+                    startActivity(new Intent(MainActivity.this,LogInActivity.class));
+                }
+            }
+        });
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
 }
 

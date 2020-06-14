@@ -1,6 +1,7 @@
 package com.example.myquiz;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -96,7 +97,7 @@ public class QuestionActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //radioGroup.clearCheck();
+                radioGroup.clearCheck();
                 if(i<questions.length-1){
                     i++;
                     question.setText(questions[i]);
@@ -120,7 +121,7 @@ public class QuestionActivity extends AppCompatActivity {
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //radioGroup.clearCheck();
+                radioGroup.clearCheck();
                 if(i>0){
                     i--;
                     question.setText(questions[i]);
@@ -155,21 +156,34 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     public void endQuiz(){
-        builder.setMessage("Are You Sure?").setTitle("End The Test");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
+        dialogBox("End The Test");
+    }
+
+    void dialogBox(final String key){
+        final Dialog dialog = new Dialog(QuestionActivity.this);
+        dialog.setContentView(R.layout.custom);
+        TextView text1 = dialog.findViewById(R.id.text1);
+        text1.setText(key);
+        TextView text2 = dialog.findViewById(R.id.text2);
+        text2.setText("Are you sure you want to "+key+"?");
+        Button ok = (Button) dialog.findViewById(R.id.positive);
+        ok.setText("Ok");
+        Button cancel = (Button) dialog.findViewById(R.id.negative);
+        cancel.setText("Cancel");
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
-                //startActivity(new Intent(QuestionActivity.this,MainActivity.class));
             }
         });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 dialog.dismiss();
             }
         });
-        builder.show();
+        dialog.show();
     }
-
     @Override
     public void onBackPressed() {
         endQuiz();

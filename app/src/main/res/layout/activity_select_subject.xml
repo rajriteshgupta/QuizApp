@@ -1,83 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="30dp"
+    android:paddingTop="30dp"
+    android:background="@color/light_grey"
     tools:context=".SelectSubject">
 
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="Select your Subject :::"
+            android:textSize="18sp"
+            android:paddingVertical="5dp"/>
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:paddingVertical="8dp"
+            android:autofillHints="Subjects"
+            android:background="@drawable/edittext2_round"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="Select number of questions :::"
+            android:textSize="18sp"
+            android:paddingVertical="5dp"/>
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:paddingVertical="8dp"
+            android:autofillHints="Nuber of Question"
+            android:background="@drawable/edittext2_round"/>
+
+    </LinearLayout>
+<!--    <Button-->
+<!--        android:id="@+id/bda"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="BDA"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/white_smoke"-->
+<!--        android:background="@drawable/button_round"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/cloud"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="Cloud"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/white_smoke"-->
+<!--        android:background="@drawable/button_round"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/networking"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="Networking"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/white_smoke"-->
+<!--        android:background="@drawable/button_round"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/python"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="Python"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/white_smoke"-->
+<!--        android:background="@drawable/button_round"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/aptitude"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="Aptitude"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/white_smoke"-->
+<!--        android:background="@drawable/button_round"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/gk"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="GK"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/white_smoke"-->
+<!--        android:textSize="20sp"-->
+<!--        android:background="@drawable/button_round"/>-->
+
     <Button
-        android:id="@+id/bda"
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
-        android:text="BDA"
-        android:textSize="20sp"
-        android:textAllCaps="false"
-        android:textColor="@color/white_smoke"
-        android:background="@drawable/button_round"/>
-
-    <Button
-        android:id="@+id/cloud"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Cloud"
-        android:textSize="20sp"
-        android:textAllCaps="false"
-        android:textColor="@color/white_smoke"
-        android:background="@drawable/button_round"/>
-
-    <Button
-        android:id="@+id/networking"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Networking"
-        android:textSize="20sp"
-        android:textAllCaps="false"
-        android:textColor="@color/white_smoke"
-        android:background="@drawable/button_round"/>
-
-    <Button
-        android:id="@+id/python"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Python"
-        android:textSize="20sp"
-        android:textAllCaps="false"
-        android:textColor="@color/white_smoke"
-        android:background="@drawable/button_round"/>
-
-    <Button
-        android:id="@+id/aptitude"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Aptitude"
-        android:textSize="20sp"
-        android:textAllCaps="false"
-        android:textColor="@color/white_smoke"
-        android:background="@drawable/button_round"/>
-
-    <Button
-        android:id="@+id/gk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
-        android:text="GK"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:text="Submit"
         android:textAllCaps="false"
         android:textColor="@color/white_smoke"
         android:textSize="20sp"
         android:background="@drawable/button_round"/>
 
-</LinearLayout>
+</RelativeLayout>

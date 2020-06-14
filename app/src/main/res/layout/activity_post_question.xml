@@ -4,51 +4,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/home_background"
     tools:context=".PostQuestionActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="15dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:layout_weight="40"
+                android:layout_marginTop="15dp"
+                android:background="@color/white_smoke"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="28"
+                android:text="Question"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/white_smoke"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:layout_weight="40"
+                android:layout_marginTop="15dp"
+                android:background="@color/white_smoke"/>
+
+        </LinearLayout>
+
         <EditText
             android:id="@+id/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="20dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="20dp"
+            android:layout_marginHorizontal="5dp"
+            android:singleLine="true"
             android:background="@drawable/edittext2_round"
-            android:hint="Question Here"/>
+            android:hint="Question Here"
+            android:layout_below="@+id/text1"/>
+
+        <LinearLayout
+            android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/question"
+            android:layout_marginVertical="15dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:layout_weight="40"
+                android:layout_marginTop="15dp"
+                android:background="@color/white_smoke"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="25"
+                android:text="Options"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/white_smoke"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:layout_weight="40"
+                android:layout_marginTop="15dp"
+                android:background="@color/white_smoke"/>
+
+        </LinearLayout>
 
         <EditText
             android:id="@+id/option1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="20dp"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="20dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginHorizontal="5dp"
             android:singleLine="true"
             android:background="@drawable/edittext2_round"
             android:hint="Option one"
-            android:layout_below="@+id/question"/>
+            android:layout_below="@+id/text2"/>
 
         <EditText
             android:id="@+id/option2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="20dp"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="20dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginHorizontal="5dp"
             android:singleLine="true"
             android:background="@drawable/edittext2_round"
             android:hint="Option two"
@@ -58,12 +120,10 @@
             android:id="@+id/option3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="20dp"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="20dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginHorizontal="5dp"
             android:singleLine="true"
             android:background="@drawable/edittext2_round"
             android:hint="Option three"
@@ -73,12 +133,10 @@
             android:id="@+id/option4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="20dp"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="20dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginHorizontal="5dp"
             android:singleLine="true"
             android:background="@drawable/edittext2_round"
             android:hint="Option four"
@@ -97,8 +155,7 @@
             android:textColor="@color/white"
             android:text="Post"
             android:textSize="18sp"
-            android:textAllCaps="false"
-            android:onClick="PostQuestion"/>
+            android:textAllCaps="false"/>
 
     </RelativeLayout>
 

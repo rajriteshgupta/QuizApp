@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder> {
     private List<HomeViewModel> homelist;
     private Context context;
-    int i=0;
+
     public class HomeViewHolder extends RecyclerView.ViewHolder {
         public ImageView iv;
         public TextView tv;
@@ -37,20 +38,23 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     @NonNull
     @Override
     public HomeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_item_layout,parent,false);
+        final View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_item_layout,parent,false);
         final ImageView favorite=(ImageView) itemView.findViewById(R.id.favorite);
         HomeViewHolder homeViewHolder = new HomeViewHolder(itemView);
+        favorite.setImageResource(R.drawable.ic_favorite_icon_white);
         favorite.setOnClickListener(new View.OnClickListener() {
+            boolean i = true;
+
             @Override
             public void onClick(View v) {
-                i++;
-                if(i%2==1){
+                if(i){
                     favorite.setImageResource(R.drawable.ic_favorite_icon_red);
+                    i = false;
                 }
-                else {
+                else{
                     favorite.setImageResource(R.drawable.ic_favorite_icon_white);
+                    i = true;
                 }
-                i=i%2;
             }
         });
         return homeViewHolder;
