@@ -23,6 +23,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+    Session session;
+    Intent intent;
     AlertDialog.Builder builder;
     private ActionBar toolbar;
     private BottomNavigationView b;
@@ -32,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        intent = getIntent();
+        session = new Session(MainActivity.this);
         builder = new AlertDialog.Builder(MainActivity.this);
         BottomNavigationView navigationView =(BottomNavigationView)findViewById(R.id.botnav);
         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -126,6 +130,8 @@ public class MainActivity extends AppCompatActivity {
     void dialogBox(final String key){
         final Dialog dialog = new Dialog(MainActivity.this);
         dialog.setContentView(R.layout.custom);
+        TextView text = dialog.findViewById(R.id.text);
+        text.setAlpha(0.0f);
         TextView text1 = dialog.findViewById(R.id.text1);
         text1.setText(key);
         TextView text2 = dialog.findViewById(R.id.text2);
@@ -141,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
                     finishAffinity();
                 }
                 else if(key.equals("Sign Out")){
-                    startActivity(new Intent(MainActivity.this,LogInActivity.class));
+                    session.logoutUser();
                 }
             }
         });

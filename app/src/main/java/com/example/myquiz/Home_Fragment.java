@@ -13,7 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,7 +53,7 @@ public class Home_Fragment extends Fragment {
         bda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialogBox(view,"1");
+                dialogBox(view,"BDA");
             }
         });
 
@@ -58,7 +61,7 @@ public class Home_Fragment extends Fragment {
         cloud.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialogBox(view,"2");
+                dialogBox(view,"Cloud");
             }
         });
 
@@ -66,7 +69,7 @@ public class Home_Fragment extends Fragment {
         networking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialogBox(view,"3");
+                dialogBox(view,"Networking");
             }
         });
 
@@ -121,18 +124,37 @@ public class Home_Fragment extends Fragment {
         homelist.add(new HomeViewModel(images[4],"Fact5"));
     }
 
-    void dialogBox(final View view, final String key){
+    void dialogBox(final View view, final String subject){
         final Dialog dialog = new Dialog(view.getContext());
         dialog.setContentView(R.layout.custom);
+        TextView text2 = dialog.findViewById(R.id.text2);
+        text2.setAlpha(0.0f);
+        final String[] question = {null};
+        Spinner spinner = (Spinner) dialog.findViewById(R.id.spinner);
+        final String[] items = new String[] { "5", "10", "15", "20"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(), R.layout.spinner_row, items);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                question[0] = items[position];
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                question[0] = null;
+            }
+        });
+
         Button continue_ = (Button) dialog.findViewById(R.id.positive);
         Button cancel = (Button) dialog.findViewById(R.id.negative);
         continue_.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
-                Intent intent = new Intent(view.getContext(),QuestionActivity.class);
-                intent.putExtra("key",key);
-                startActivity(intent);
+                String type = "fetch_question";
+                QuestionBackgroundWorker questionBackgroundWorker = new QuestionBackgroundWorker(view.getContext());
+                questionBackgroundWorker.execute(type, subject, question[0]);
             }
         });
         cancel.setOnClickListener(new View.OnClickListener() {

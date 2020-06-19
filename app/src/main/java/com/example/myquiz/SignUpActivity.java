@@ -58,12 +58,15 @@ public class SignUpActivity extends AppCompatActivity {
         String confirmPass = conPass.getText().toString();
         String type = "signup";
         String name = firstName+" "+lastName;
-        if(confirmPass.equals(password) && firstName !=null && lastName !=null && eMail !=null && number !=null && username !=null && password !=null && confirmPass !=null) {
+        if(confirmPass.equals(password) && !firstName.isEmpty() && !lastName.isEmpty() && !eMail.isEmpty() && !number.isEmpty() && !username.isEmpty() && !password.isEmpty() && !confirmPass.isEmpty()) {
             BackgroundWorker backgroundWorker = new BackgroundWorker(this);
             backgroundWorker.execute(type, name, eMail, mAge, number, username, password);
         }
         else if(!confirmPass.equals(password)){
             Toast.makeText(SignUpActivity.this,"Password and Confirm Password Are different.",Toast.LENGTH_LONG).show();
+        }
+        else {
+            Toast.makeText(SignUpActivity.this,"Some Fields are Empty!!!",Toast.LENGTH_LONG).show();
         }
     }
 }

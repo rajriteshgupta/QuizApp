@@ -1,6 +1,8 @@
 package com.example.myquiz;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +43,9 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
         final View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_item_layout,parent,false);
         final ImageView favorite=(ImageView) itemView.findViewById(R.id.favorite);
         HomeViewHolder homeViewHolder = new HomeViewHolder(itemView);
+//        Resources res = itemView.getResources();
+//        final Drawable red = res.getDrawable(R.drawable.ic_favorite_icon_red);
+//        final Drawable white = res.getDrawable(R.drawable.ic_favorite_icon_white);
         favorite.setImageResource(R.drawable.ic_favorite_icon_white);
         favorite.setOnClickListener(new View.OnClickListener() {
             boolean i = true;
@@ -55,6 +60,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
                     favorite.setImageResource(R.drawable.ic_favorite_icon_white);
                     i = true;
                 }
+
+//                if(favorite.getDrawable()==red){
+//                    favorite.setImageResource(R.drawable.ic_favorite_icon_white);
+//                }
+//                else if(favorite.getDrawable()==white){
+//                    favorite.setImageResource(R.drawable.ic_favorite_icon_red);
+//                }
+
             }
         });
         return homeViewHolder;

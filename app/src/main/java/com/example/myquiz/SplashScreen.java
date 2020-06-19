@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
+    Session session;
     Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,13 +18,22 @@ public class SplashScreen extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        session = new Session(SplashScreen.this);
+        final Boolean login_state = session.getLogin();
         handler=new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(SplashScreen.this,LogInActivity.class);
-                startActivity(intent);
-                finish();
+                if(login_state == false){
+                    Intent intent = new Intent(SplashScreen.this,LogInActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else {
+                    Intent intent = new Intent(SplashScreen.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         },1000);
     }

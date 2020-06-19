@@ -15,12 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SelectSubject"></activity>
+        <activity android:name=".SelectSubject" android:noHistory="true"/>
         <activity android:name=".NotificationActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".PostQuestionActivity" />
         <activity android:name=".QuestionActivity" />
-        <activity android:name=".ContactUs" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SplashScreen">
             <intent-filter>

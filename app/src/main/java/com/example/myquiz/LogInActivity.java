@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,7 +37,12 @@ public class LogInActivity extends AppCompatActivity {
         String username = uName.getText().toString();
         String password = pass.getText().toString();
         String type = "login";
-        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, username, password);
+        if(!username.isEmpty() && !password.isEmpty()){
+            BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+            backgroundWorker.execute(type, username, password);
+        }
+        else {
+            Toast.makeText(LogInActivity.this,"Some Fields are Empty!!!",Toast.LENGTH_LONG).show();
+        }
     }
 }

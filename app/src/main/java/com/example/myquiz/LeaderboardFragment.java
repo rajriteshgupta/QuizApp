@@ -1,5 +1,6 @@
 package com.example.myquiz;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -40,6 +41,8 @@ public class LeaderboardFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private LeaderboardAdapter leaderboardAdapter;
 
+    ProgressDialog progressDialog;
+
     String address = "http://192.168.43.87/quiz/fetchleaderboard.php";
     InputStream inputStream=null;
     String line=null;
@@ -55,7 +58,7 @@ public class LeaderboardFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //allowing network in maun thread
+        //allowing network in main thread
         StrictMode.setThreadPolicy((new StrictMode.ThreadPolicy.Builder().permitNetwork().build()));
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_leaderboard, container, false);
@@ -67,7 +70,16 @@ public class LeaderboardFragment extends Fragment {
         leaderboardAdapter = new LeaderboardAdapter(leaderboardViewModelList);
         recyclerView.setAdapter(leaderboardAdapter);
         //  leaderboardViewModelList.add(new LeaderboardViewModel(1,"Shrish",100));
+//
+//        progressDialog = new ProgressDialog(view.getContext());
+//        progressDialog.setMessage("loading....");
+//        progressDialog.setTitle("Leaderboard");
+//        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+//        progressDialog.show();
+
         prepareLeaderboard();
+
+//        progressDialog.dismiss();
         return view;
     }
 
@@ -83,10 +95,7 @@ public class LeaderboardFragment extends Fragment {
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setDoInput(true);
-
-
             inputStream= new BufferedInputStream(httpURLConnection.getInputStream());
-
             BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
             //StringBuilder stringBuilder= new StringBuilder();
 
@@ -119,10 +128,9 @@ public class LeaderboardFragment extends Fragment {
                 for (int i = 0; i < jsonArray.length(); i++) {
                     jsonObject = jsonArray.getJSONObject(i);
                     name[i] = jsonObject.getString("username");
-                    rank[i] = jsonObject.getInt("rank");
-                    score[i] = jsonObject.getInt("score");
+                    score[i] = jsonObject.getInt("total_score");
 
-                    leaderboardViewModelList.add(new LeaderboardViewModel(rank[i], name[i], score[i]));
+                    leaderboardViewModelList.add(new LeaderboardViewModel(name[i], score[i]));
 
                 }
                 //Log.d("satge2","json values extracted");

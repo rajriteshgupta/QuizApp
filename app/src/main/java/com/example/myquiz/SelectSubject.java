@@ -1,5 +1,6 @@
 package com.example.myquiz;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.widget.Spinner;
 
 public class SelectSubject extends AppCompatActivity {
 
+    private ActionBar toolbar;
     String subject,question;
 
     @Override
@@ -20,14 +22,10 @@ public class SelectSubject extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_subject);
 
+        toolbar = getSupportActionBar();
+        toolbar.setTitle("Create Quiz");
         Button button = findViewById(R.id.button);
-//        Button button1 = findViewById(R.id.bda);
-//        Button button2 = findViewById(R.id.cloud);
-//        Button button3 = findViewById(R.id.networking);
-//        Button button4 = findViewById(R.id.python);
-//        Button button5 = findViewById(R.id.aptitude);
-//        Button button6 = findViewById(R.id.gk);
-//
+
         Spinner spinner1 = (Spinner) findViewById(R.id.spinner1);
         final String[] items1 = new String[] { "BDA", "Cloud", "Networking", "Python", "Aptitude", "GK"};
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.spinner_row, items1);
@@ -69,55 +67,5 @@ public class SelectSubject extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//
-//        button1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(SelectSubject.this,PostQuestionActivity.class);
-//                intent.putExtra("key","bda");
-//                startActivity(intent);
-//            }
-//        });
-//
-//        button2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(SelectSubject.this,PostQuestionActivity.class);
-//                intent.putExtra("key","cloud");
-//                startActivity(intent);
-//            }
-//        });
-//        button3.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(SelectSubject.this,PostQuestionActivity.class);
-//                intent.putExtra("key","networking");
-//                startActivity(intent);
-//            }
-//        });
-//        button4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(SelectSubject.this,PostQuestionActivity.class);
-//                intent.putExtra("key","python");
-//                startActivity(intent);
-//            }
-//        });
-//        button5.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(SelectSubject.this,PostQuestionActivity.class);
-//                intent.putExtra("key","aptitude");
-//                startActivity(intent);
-//            }
-//        });
-//        button6.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(SelectSubject.this,PostQuestionActivity.class);
-//                intent.putExtra("key","gk");
-//                startActivity(intent);
-//            }
-//        });
     }
 }
